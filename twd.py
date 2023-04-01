@@ -10,7 +10,7 @@ import Levenshtein
 
 # Input validation for character name. Symbols accepted: '.-
 def validate_inputs(args):
-	if args.character is None and args.season is None:
+	if args.character is None and args.season is None and args.episode is None:
 		print("[]")
 		sys.exit(1)
 
@@ -53,6 +53,95 @@ def death_joins(character_id, cur):
 		death_episode = None
 
 	return death_episode
+
+
+
+# Return 'res', an array json-dumpable that contains all the requested episode information
+# (== Given the episode number, all the new characters and the deaths)
+def build_episode_res(args, cur):
+	pattern = r'^[sS][0-9]{1,2}x[0-9]{1,3}$'
+
+	if bool(re.match(pattern, args.episode)):
+		seasons = [0,6,13,16,16,16,16,16,16,16,16,16]
+		parts = args.episode.split("x")
+		season = int(parts[0][1:])
+		episode = int(parts[1])
+		
+		result = 0
+		for i in range(1, len(seasons)):
+			if season != i:
+				result = result + seasons[i]
+			else:
+				result = result + episode
+				break
+		
+		where_clause = "ep.EpisodeNumber = " + str(result)
+	else:
+		where_clause = "ep.EpisodeTitle = \"" + args.episode + "\" COLLATE NOCASE"
+
+	cur.execute(
+		"""SELECT ch.Name, ep.Season, ep.EpisodeInSeason, ep.EpisodeTitle
+			FROM Character AS ch
+			LEFT JOIN Episodes AS ep ON ch.FirstAppearance = ep.EpisodeNumber
+			WHERE """ + where_clause + """
+			ORDER BY ch.Id
+		"""
+	)
+	first_appearances = cur.fetchall()
+
+	cur.execute(
+		"""SELECT ch.Name, ep.Season, ep.EpisodeInSeason, ep.EpisodeTitle
+			FROM Character AS ch
+			INNER JOIN Episodes as ep ON ch.Death = ep.EpisodeNumber
+			WHERE """ + where_clause + """
+			ORDER BY ep.EpisodeInSeason
+		"""
+	)
+	deaths_in_episode = cur.fetchall()
+
+	count = 0
+	res = {'episode': [], 'first_appearances':[], 'deaths':[]}
+	for app in first_appearances:
+		if count == 0:
+			res['episode'] = {'title':app[3], 'season':app[1], 'episode':app[2]}
+			count = count + 1
+		res['first_appearances'].append(app[0])
+
+	count = 0
+	for app in deaths_in_episode:
+		res['deaths'].append(app[0])
+
+	return res
+
+
+# Return 'output' with the requested episode output extracted by res
+def episode_output(res, args):
+	if args.json:
+		output = json.dumps(res)
+	elif args.html:
+		if res['episode'] != []:
+			output = f"<h3>First Appearances in \"{res['episode']['title']}\" S{res['episode']['season']}x{res['episode']['episode']}</h3>"
+			for app in res['first_appearances']:
+				output += f"<br><p>{app}</p>"
+			output += f"<br><h3>Deaths in \"{res['episode']['title']}\" S{res['episode']['season']}x{res['episode']['episode']}</h3>"
+			for app in res['deaths']:
+				output += f"<br><p>{app}</p>"
+		else:
+			output = f"<h3>There's no episode named \"{args.episode}\"<h3>"
+	else:
+		if res['episode'] != []:
+			output = f"First Appearances in \"{res['episode']['title']}\" S{res['episode']['season']}x{res['episode']['episode']}:\n"
+			for app in res['first_appearances']:
+				output += f"  - {app}\n"
+
+			output += f"\nDeaths in in \"{res['episode']['title']}\" S{res['episode']['season']}x{res['episode']['episode']}:\n"
+			for app in res['deaths']:
+				output += f"  - {app}\n"
+		else:
+			output = f"There's no episode named \"{args.episode}\""
+
+	return output
+
 
 
 
@@ -113,6 +202,45 @@ def build_season_res(args, cur):
 			episode = app[0]
 
 	return res
+
+
+
+
+# Return 'output' with the requested season output extracted by res
+def season_output(res, args):
+	if args.json:
+		output = json.dumps(res)
+	elif args.html:
+		output = f"<p>New Characters in Season {args.season}:</p>"
+		for app in res['first_appearances']:
+			chars = ""
+			for ch in app['characters']:
+				chars += f"{ch}, "
+			output += f"<br><p>Ep.{app['n']}: {chars[:-2]}</p>   "
+
+		output += f"<br><p>Deaths in Season {args.season}:</p>   "
+		for death in res['deaths']:
+			chars = ""
+			for ch in death['characters']:
+				chars += f"{ch}, "
+			output += f"<br><p>Ep.{death['n']}: {chars[:-2]}</p>"
+	else:
+		output = f"New Characters in Season {args.season}:"
+		for app in res['first_appearances']:
+			chars = ""
+			for ch in app['characters']:
+				chars += f"{ch}, "
+			output += f"\n  Ep.{app['n']}: {chars[:-2]}"
+
+		output += f"\nDeaths in Season {args.season}:"
+		for death in res['deaths']:
+			chars = ""
+			for ch in death['characters']:
+				chars += f"{ch}, "
+			output += f"\n  Ep.{death['n']}: {chars[:-2]}"
+
+	return output
+
 
 
 
@@ -200,41 +328,6 @@ def character_output(res, args):
 
 
 
-# Return 'output' with the requested season output extracted by res
-def season_output(res, args):
-	if args.json:
-		output = json.dumps(res)
-	elif args.html:
-		output = f"<p>New Characters in Season {args.season}:</p>"
-		for app in res['first_appearances']:
-			chars = ""
-			for ch in app['characters']:
-				chars += f"{ch}, "
-			output += f"<br><p>Ep.{app['n']}: {chars[:-2]}</p>   "
-
-		output += f"<br><p>Deaths in Season {args.season}:</p>   "
-		for death in res['deaths']:
-			chars = ""
-			for ch in death['characters']:
-				chars += f"{ch}, "
-			output += f"<br><p>Ep.{death['n']}: {chars[:-2]}</p>"
-	else:
-		output = f"New Characters in Season {args.season}:"
-		for app in res['first_appearances']:
-			chars = ""
-			for ch in app['characters']:
-				chars += f"{ch}, "
-			output += f"\n  Ep.{app['n']}: {chars[:-2]}"
-
-		output += f"\nDeaths in Season {args.season}:"
-		for death in res['deaths']:
-			chars = ""
-			for ch in death['characters']:
-				chars += f"{ch}, "
-			output += f"\n  Ep.{death['n']}: {chars[:-2]}"
-
-	return output
-
 
 
 # Main
@@ -242,6 +335,7 @@ def main():
 	parser = argparse.ArgumentParser(description='Returns informations about The Walking Dead characters')
 	parser.add_argument('--character', type=str, help='returns the character\'s first seen date and his death')
 	parser.add_argument('--season', type=int, help='returns all the new characters and all the deaths of the season')
+	parser.add_argument('--episode', type=str, help='returns all new characters and all the deaths in the episode')
 	parser.add_argument('--json', action="store_true", help='if you want a JSON output format')
 	parser.add_argument('--html', action="store_true", help='if you want a HTML output format (helpful with Telegram bot\'s output)')
 
@@ -260,6 +354,9 @@ def main():
 	elif args.season:							# user requested a season
 		res = build_season_res(args, cur)		# build 'res' with season query output
 		output = season_output(res, args)
+	elif args.episode:
+		res = build_episode_res(args, cur)
+		output = episode_output(res, args)
 
 	print(output)
 	cur.close()
