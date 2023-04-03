@@ -276,7 +276,7 @@ INSERT INTO Character VALUES(83,'Matthew Austin Murray','Private Wilson',22,22);
 INSERT INTO Character VALUES(84,'Troy Faruk','Private Sean',22,22);
 INSERT INTO Character VALUES(85,'Mike Mayhall','Private Franklin',22,22);
 INSERT INTO Character VALUES(86,'Sonequa Martin-Green','Sasha Williams',27,99);
-INSERT INTO Character VALUES(87,'Chad Coleman','Tyreese Williams',27,99);
+INSERT INTO Character VALUES(87,'Chad Coleman','Tyreese Williams',27,60);
 INSERT INTO Character VALUES(88,'Daniele Thomas May','Allen',27,41);
 INSERT INTO Character VALUES(89,'Tyler Chase','Ben',27,34);
 INSERT INTO Character VALUES(90,'Cherie Dvorak','Donna',27,27);
