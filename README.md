@@ -156,7 +156,7 @@ Did I make a telegram bot out of it?
 
 | ![Naaah](img/telegrambot.png) |
 |:--:|
-| <b>naaaaaaah</b> |
+| <b>NAAAH</b> |
 
 
 ---
