@@ -137,7 +137,7 @@ CREATE TABLE Episodes (
 );
 ```
 
-An example here for our beloved [Hershel (Greene)](https://walkingdead.fandom.com/wiki/Hershel_Greene_(TV_Series)):
+An example here for our beloved [Hershel (Greene)](https://walkingdead.fandom.com/wiki/Hershel_Greene_(TV_Series)).
 
 ```bash
 $ sqlite3 twd.db "SELECT * FROM Character WHERE Name LIKE 'Hershel G%'"
@@ -158,10 +158,11 @@ Did I make a telegram bot out of it?
 |:--:|
 | <b>naaaaaaah</b> |
 
-
+<br>
 
 ---
 
+<br>
 
 ## Why?
 
