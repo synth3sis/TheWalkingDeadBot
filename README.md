@@ -171,7 +171,7 @@ At a certain point, I just wanted to know when [The Governor](https://walkingdea
 The cool answer is that I didn't find anything similar so I did it to help others that could make use of the database I created.
 
 > **Note**
-> Sometimes online wikies are not enough, sometimes you just need **APIs**.
+> Sometimes online wikies are not enough, sometimes you just need **API** calls over well indexed databases
 
 ---
 
