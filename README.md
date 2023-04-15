@@ -96,7 +96,7 @@ First Appearances in "Bloodletting" S2x2:
   - Otis
   - Jimmy
 
-Deaths in in "Bloodletting" S2x2:
+Deaths in "Bloodletting" S2x2:
   - Annette Greene
   - Shawn Greene
 ```
