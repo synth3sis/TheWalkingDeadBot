@@ -113,7 +113,7 @@ $ sqlite3 twd.db "SELECT COUNT(*) FROM Character"
 ```
 There are two tables, `Character` and `Episodes`. The Column `FirstAppearance` and `Death` contain the link to the `Episode.EpisodeNumber` which identifies the episode in the series itself.
 
-**Character**
+**Character table**
 ```sql
 CREATE TABLE Character (
     Id integer PRIMARY KEY AUTOINCREMENT,
@@ -126,7 +126,7 @@ CREATE TABLE Character (
 ```
 
 
-**Episode**
+**Episode table**
 ```sql
 CREATE TABLE Episodes (
     EpisodeNumber INTEGER PRIMARY KEY,
