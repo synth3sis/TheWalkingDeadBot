@@ -138,7 +138,7 @@ CREATE TABLE Episodes (
 ```
 
 An example here for our beloved [Hershel (Greene)](https://walkingdead.fandom.com/wiki/Hershel_Greene_(TV_Series)):
-image.png
+
 ```bash
 $ sqlite3 twd.db "SELECT * FROM Character WHERE Name LIKE 'Hershel G%'"
 34|Scott Wilson|Hershel Greene|8|43
