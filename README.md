@@ -86,7 +86,7 @@ $ ./twd.py --season 2 --json
 
 **Aaaand** do the same for a single episode...
 
-```json
+```bash
 $ ./twd.py --episode Bloodletting
 First Appearances in "Bloodletting" S2x2:
   - Maggie Rhee Greene
@@ -114,7 +114,7 @@ $ sqlite3 twd.db "SELECT COUNT(*) FROM Character"
 There are two tables, `Character` and `Episodes`. The Column `FirstAppearance` and `Death` contain the link to the `Episode.EpisodeNumber` which identifies the episode in the series itself.
 
 **Character**
->```
+>```sql
 >CREATE TABLE Character (
 >    Id integer PRIMARY KEY AUTOINCREMENT,
 >    Actor varchar,
@@ -127,7 +127,7 @@ There are two tables, `Character` and `Episodes`. The Column `FirstAppearance` a
 
 
 **Episode**
->```
+>```sql
 >CREATE TABLE Episodes (
 >    EpisodeNumber INTEGER PRIMARY KEY,
 >    Season INTEGER,
