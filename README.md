@@ -202,7 +202,8 @@ Noah:
   First:  S3 ep.11 "I Ain't a Judas"
   Death:  S3 ep.11 "I Ain't a Judas"
   Status: Dead
-
+```
+```
 $ sqlite3 twd.db "SELECT * FROM Character WHERE Name LIKE 'Noah%'"
 64|Parker Wierling|Noah|30|30
 148|Tyler James Williams|Noah|55|65
