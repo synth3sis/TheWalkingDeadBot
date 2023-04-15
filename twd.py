@@ -134,7 +134,7 @@ def episode_output(res, args):
 			for app in res['first_appearances']:
 				output += f"  - {app}\n"
 
-			output += f"\nDeaths in in \"{res['episode']['title']}\" S{res['episode']['season']}x{res['episode']['episode']}:\n"
+			output += f"\nDeaths in \"{res['episode']['title']}\" S{res['episode']['season']}x{res['episode']['episode']}:\n"
 			for app in res['deaths']:
 				output += f"  - {app}\n"
 		else:
