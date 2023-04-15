@@ -213,4 +213,4 @@ The Tyler James Williams' Noah appears in ten times more episodes than the Parke
 
 ---
 
-<a href="https://www.buymeacoffee.com/synt3sis" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
+<a href="https://www.buymeacoffee.com/synt3sis" target="_blank"><img src="https://cdn.buymeacoffee.com/" alt="Buy Me A Coffee" height="31" width="31"></a>
