@@ -203,10 +203,14 @@ Noah:
   Death:  S3 ep.11 "I Ain't a Judas"
   Status: Dead
 ```
-```
+```bash
 $ sqlite3 twd.db "SELECT * FROM Character WHERE Name LIKE 'Noah%'"
 64|Parker Wierling|Noah|30|30
 148|Tyler James Williams|Noah|55|65
 ```
 
 The Tyler James Williams' Noah appears in ten times more episodes than the Parker Wierling's so it should be more important.
+
+---
+
+<a href="https://www.buymeacoffee.com/synt3sis" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
