@@ -158,7 +158,6 @@ Did I make a telegram bot out of it?
 |:--:|
 | <b>naaaaaaah</b> |
 
-<br>
 
 ---
 
@@ -174,6 +173,8 @@ The cool answer is that I didn't find anything similar so I did it to help other
 !!! Note Sometimes online wikies are not enough, sometimes you just need **APIs**.
 
 ---
+
+<br>
 
 ## Issues
 
