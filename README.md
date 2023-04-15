@@ -3,7 +3,7 @@
 Made for The Walking Dead series fans.
 It's a fully comprehensive database containing information about episodes and characters and it comes with the right tools to make queries.
 
-### Dependencies
+## Dependencies
 
 The python3 program requires the `Levenshtein` package and you need to create the database from the dump I included in the project. The following commands will do everything you need.
 
@@ -15,7 +15,7 @@ cat twd-dump.db | sqlite3 twd.db
 You are good to go. Look at the next section to see how you can query the DB.
 
 
-### Querist [twd.py](/twd.py)
+## Querist [twd.py](/twd.py)
 
 It's a simple python script to interrogate the database and obtain informations, but what you can do?
 
@@ -48,7 +48,7 @@ Hershel Greene:
 We can use it to generate a json response (APIs freaks I hear you) with the `--json` flag:
 
 
-```json
+```bash
 $ ./twd.py --character Rick --json |jq
 
 {
@@ -77,7 +77,7 @@ $ ./twd.py --character Rick --json |jq
 **Ooooor** we could ask infos about new characters and character's deaths for a single season!
 
 
-```json
+```bash
 $ ./twd.py --season 2 --json
 
 {"first_appearances": [{"n": 2, "characters": ["Maggie Rhee Greene", "Beth Greene", "Hershel Greene", "Patricia", "Otis", "Jimmy"]}, {"n": 3, "characters": ["Annette Greene", "Shawn Greene"]}, {"n": 8, "characters": ["Tony", "Dave"]}, {"n": 9, "characters": ["Nate", "Randall Culver", "Sean"]}], "deaths": [{"n": 1, "characters": ["Sophia Peletier"]}, {"n": 2, "characters": ["Annette Greene", "Shawn Greene"]}, {"n": 3, "characters": ["Otis"]}, {"n": 8, "characters": ["Tony", "Dave"]}, {"n": 9, "characters": ["Nate", "Sean"]}, {"n": 11, "characters": ["Dale Horvath"]}, {"n": 12, "characters": ["Shane Walsh", "Randall Culver"]}]}
