@@ -150,7 +150,7 @@ $ sqlite3 twd.db "SELECT * FROM Episodes WHERE EpisodeNumber = 8 OR EpisodeNumbe
 
 <br>
 
-### Telegram Bot?
+## Telegram Bot?
 
 Did I make a telegram bot out of it?
 
@@ -177,7 +177,7 @@ The cool answer is that I didn't find anything similar so I did it to help other
 
 ## Issues
 
-#### character prioritization (open)
+### character prioritization (open)
 Given how it's programmed, twd.py always tries to give you the best answer based on name matching ([Levenshtein function](https://maxbachmann.github.io/Levenshtein/levenshtein.html)). 
 
 ```python
