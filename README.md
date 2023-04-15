@@ -135,6 +135,7 @@ CREATE TABLE Episodes (
     ReleaseDate TEXT,
     EpisodeTitle TEXT
 );
+```
 
 An example here for our beloved [Hershel (Greene)](https://walkingdead.fandom.com/wiki/Hershel_Greene_(TV_Series)):
 image.png
