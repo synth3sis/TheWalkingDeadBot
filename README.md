@@ -105,7 +105,7 @@ Deaths in "Bloodletting" S2x2:
 
 ### The Database
 
-If you are wandering where and how I filled the database with the correct infos, I found everything in the [fandom wiki TV Series Character page](https://walkingdead.fandom.com/wiki/TV_Series_Characters), and yes, I inserted them pseudo manually (made a python script to avoid using sqlite3 CLI). It took days.
+If you are wondering where and how I filled the database with the correct infos, I found everything in the [fandom wiki TV Series Character page](https://walkingdead.fandom.com/wiki/TV_Series_Characters), and yes, I inserted them pseudo manually (made a python script to avoid using sqlite3 CLI). It took days.
 
 ```bash
 $ sqlite3 twd.db "SELECT COUNT(*) FROM Character"
