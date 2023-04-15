@@ -114,27 +114,27 @@ $ sqlite3 twd.db "SELECT COUNT(*) FROM Character"
 There are two tables, `Character` and `Episodes`. The Column `FirstAppearance` and `Death` contain the link to the `Episode.EpisodeNumber` which identifies the episode in the series itself.
 
 **Character**
->```sql
->CREATE TABLE Character (
->    Id integer PRIMARY KEY AUTOINCREMENT,
->    Actor varchar,
->    Name varchar,
->    FirstAppearance integer,
->    Death integer,
->    UNIQUE(Actor, Name)
->);
->```
+```sql
+CREATE TABLE Character (
+    Id integer PRIMARY KEY AUTOINCREMENT,
+    Actor varchar,
+    Name varchar,
+    FirstAppearance integer,
+    Death integer,
+    UNIQUE(Actor, Name)
+);
+```
 
 
 **Episode**
->```sql
->CREATE TABLE Episodes (
->    EpisodeNumber INTEGER PRIMARY KEY,
->    Season INTEGER,
->    EpisodeInSeason INTEGER,
->    ReleaseDate TEXT,
->    EpisodeTitle TEXT
->);
+```sql
+CREATE TABLE Episodes (
+    EpisodeNumber INTEGER PRIMARY KEY,
+    Season INTEGER,
+    EpisodeInSeason INTEGER,
+    ReleaseDate TEXT,
+    EpisodeTitle TEXT
+);
 
 An example here for our beloved [Hershel (Greene)](https://walkingdead.fandom.com/wiki/Hershel_Greene_(TV_Series)):
 image.png
