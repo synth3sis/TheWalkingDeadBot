@@ -165,7 +165,7 @@ Did I make a telegram bot out of it?
 
 ## Why?
 
-_Why_ all this effort? _Why_ the project on github? _Why_ anything else?
+_Why_ all this effort? _Why_ the project on github? _Why_ anything else? \
 At a certain point, I just wanted to know when The Governor would have f*\****g died. The rest is history (and overcomplicated project ideas).
 
 The cool answer is that I didn't find anything similar so I did it to help others that could make use of the database I created.
