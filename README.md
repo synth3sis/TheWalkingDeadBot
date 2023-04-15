@@ -10,7 +10,7 @@ The python3 program requires the `Levenshtein` package and you need to create th
 ```bash
 pip3 install Levenshtein
 chmod +x twd.py
-cat twd-dump.db | sqlite3 twd.db
+cat twd-dump.sql | sqlite3 twd.db
 ```
 You are good to go. Look at the next section to see how you can query the DB.
 
