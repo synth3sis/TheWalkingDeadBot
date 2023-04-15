@@ -111,7 +111,7 @@ If you are wondering where and how I filled the database with the correct infos,
 $ sqlite3 twd.db "SELECT COUNT(*) FROM Character"
 515
 ```
-There are two tables, `Character` and `Episodes`. The Column `FirstAppearance` and `Death` contain the link to the `Episode.EpisodeNumber` which identifies the episode in the series itself.
+There are two tables, `Character` and `Episodes`. The Columns `FirstAppearance` and `Death` contain the link to the `Episode.EpisodeNumber` which identifies the episode in the series itself.
 
 **Character table**
 ```sql
