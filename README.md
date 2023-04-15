@@ -70,7 +70,8 @@ $ ./twd.py --character Rick --json |jq
 ```
 <br>
 
-!!! Warning Warning! SpOiLeRs ahead
+> **Warning**
+> SpOiLeRs ahead
 
 <br>
 
