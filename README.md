@@ -17,13 +17,13 @@ You are good to go. Look at the next section to see how you can query the DB.
 
 ## Querist [twd.py](/twd.py)
 
-It's a simple python script to interrogate the database and obtain informations, but what you can do?
+It's a simple python script to interrogate the database and obtain information, but what can you do?
 
-```
+```bash
 $ ./twd.py --help
 usage: twd.py [-h] [--character CHARACTER] [--season SEASON] [--episode EPISODE] [--json] [--html]
 
-Returns informations about The Walking Dead characters
+Returns information about The Walking Dead characters
 
 options:
   -h, --help            show this help message and exit
@@ -36,7 +36,8 @@ options:
 ```
 
 We can simply interrogate the database to obtain quick infos about the character:
-```
+
+```bash
 $ ./twd.py --character "hershel greene"
 
 Hershel Greene:
