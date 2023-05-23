@@ -190,7 +190,8 @@ Deaths in "Bloodletting" S2x2:
 
 ### The Database
 
-If you are wondering where and how I filled the database with the correct infos, I found everything in the [fandom wiki TV Series Character page](https://walkingdead.fandom.com/wiki/TV_Series_Characters), and yes, I inserted them pseudo manually (made a python script to avoid using sqlite3 CLI). It took days.
+If you are wondering where and how I filled the database with the correct infos, I found everything in the [fandom wiki TV Series Character page](https://walkingdead.fandom.com/wiki/TV_Series_Characters), and yes, I inserted them pseudo manually (made a python script to avoid using sqlite3 CLI).
+It took days.
 
 ```bash
 $ sqlite3 twd.db "SELECT COUNT(*) FROM Character"
@@ -251,11 +252,12 @@ Did I make a telegram bot out of it?
 ## Why?
 
 _Why_ all this effort? _Why_ the project on github? _Why_ anything else? \
-At a certain point, I just wanted to know when [The Governor](https://walkingdead.fandom.com/wiki/Philip_Blake_(TV_Series)) would have f*\****g died. The rest is history (and overcomplicated project ideas).
+At a certain point, **𝓘 𝓳𝓾𝓼𝓽 𝔀𝓪𝓷𝓽𝓮𝓭 𝓽𝓸 𝓴𝓷𝓸𝔀 𝔀𝓱𝓮𝓷  [𝓣𝓱𝓮 𝓖𝓸𝓿𝓮𝓻𝓷𝓸𝓻](https://walkingdead.fandom.com/wiki/Philip_Blake_(TV_Series)) 𝔀𝓸𝓾𝓵𝓭 𝓱𝓪𝓿𝓮 𝓯𝓾𝓬𝓴𝓲𝓷𝓰 𝓭𝓲𝓮𝓭**.
+The rest is history (and overcomplicated project ideas).
 
-The cool answer is that I didn't find anything similar so I did it to help others that could make use of the database I created.
+The cool answer is *that I didn't find anything similar so I did it to help others that could make use of the database I created*.
 
-> **Note**
+> 
 > Sometimes online wikies are not enough, sometimes you just need **API** calls over well indexed databases
 
 ---
