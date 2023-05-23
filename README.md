@@ -80,9 +80,93 @@ $ ./twd.py --character Rick --json |jq
 
 
 ```bash
-$ ./twd.py --season 2 --json
+$ ./twd.py --season 2 --json |jq
 
-{"first_appearances": [{"n": 2, "characters": ["Maggie Rhee Greene", "Beth Greene", "Hershel Greene", "Patricia", "Otis", "Jimmy"]}, {"n": 3, "characters": ["Annette Greene", "Shawn Greene"]}, {"n": 8, "characters": ["Tony", "Dave"]}, {"n": 9, "characters": ["Nate", "Randall Culver", "Sean"]}], "deaths": [{"n": 1, "characters": ["Sophia Peletier"]}, {"n": 2, "characters": ["Annette Greene", "Shawn Greene"]}, {"n": 3, "characters": ["Otis"]}, {"n": 8, "characters": ["Tony", "Dave"]}, {"n": 9, "characters": ["Nate", "Sean"]}, {"n": 11, "characters": ["Dale Horvath"]}, {"n": 12, "characters": ["Shane Walsh", "Randall Culver"]}]}
+{
+  "first_appearances": [
+    {
+      "n": 2,
+      "characters": [
+        "Maggie Rhee Greene",
+        "Beth Greene",
+        "Hershel Greene",
+        "Patricia",
+        "Otis",
+        "Jimmy"
+      ]
+    },
+    {
+      "n": 3,
+      "characters": [
+        "Annette Greene",
+        "Shawn Greene"
+      ]
+    },
+    {
+      "n": 8,
+      "characters": [
+        "Tony",
+        "Dave"
+      ]
+    },
+    {
+      "n": 9,
+      "characters": [
+        "Nate",
+        "Randall Culver",
+        "Sean"
+      ]
+    }
+  ],
+  "deaths": [
+    {
+      "n": 1,
+      "characters": [
+        "Sophia Peletier"
+      ]
+    },
+    {
+      "n": 2,
+      "characters": [
+        "Annette Greene",
+        "Shawn Greene"
+      ]
+    },
+    {
+      "n": 3,
+      "characters": [
+        "Otis"
+      ]
+    },
+    {
+      "n": 8,
+      "characters": [
+        "Tony",
+        "Dave"
+      ]
+    },
+    {
+      "n": 9,
+      "characters": [
+        "Nate",
+        "Sean"
+      ]
+    },
+    {
+      "n": 11,
+      "characters": [
+        "Dale Horvath"
+      ]
+    },
+    {
+      "n": 12,
+      "characters": [
+        "Shane Walsh",
+        "Randall Culver"
+      ]
+    }
+  ]
+}
 ```
 
 **Aaaand** do the same for a single episode...
