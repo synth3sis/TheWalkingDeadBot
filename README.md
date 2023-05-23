@@ -5,7 +5,7 @@ It's a fully comprehensive database containing information about episodes and ch
 
 ## Dependencies
 
-The python3 program requires the `Levenshtein` package and you need to create the database from the dump I included in the project. The following commands will do everything you need.
+The **python3** program requires the `Levenshtein` package and you need to create the database from the dump I included in the project. The following commands will do everything you need.
 
 ```bash
 pip3 install Levenshtein
