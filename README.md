@@ -267,7 +267,7 @@ The cool answer is *that I didn't find anything similar so I did it to help othe
 
 ## Issues
 
-### character prioritization (open)
+### Character prioritization (open)
 Given how it's programmed, twd.py always tries to give you the best answer based on name matching ([Levenshtein function](https://maxbachmann.github.io/Levenshtein/levenshtein.html)). 
 
 ```python
