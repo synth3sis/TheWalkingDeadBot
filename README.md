@@ -252,7 +252,7 @@ Did I make a telegram bot out of it?
 ## Why?
 
 _Why_ all this effort? _Why_ the project on github? _Why_ anything else? \
-At a certain point, **𝓘 𝓳𝓾𝓼𝓽 𝔀𝓪𝓷𝓽𝓮𝓭 𝓽𝓸 𝓴𝓷𝓸𝔀 𝔀𝓱𝓮𝓷  [𝓣𝓱𝓮 𝓖𝓸𝓿𝓮𝓻𝓷𝓸𝓻](https://walkingdead.fandom.com/wiki/Philip_Blake_(TV_Series)) 𝔀𝓸𝓾𝓵𝓭 𝓱𝓪𝓿𝓮 𝓯𝓾𝓬𝓴𝓲𝓷𝓰 𝓭𝓲𝓮𝓭**.
+At a certain point, **𝓘 𝓳𝓾𝓼𝓽 𝔀𝓪𝓷𝓽𝓮𝓭 𝓽𝓸 𝓴𝓷𝓸𝔀 𝔀𝓱𝓮𝓷  [𝓣𝓱𝓮 𝓖𝓸𝓿𝓮𝓻𝓷𝓸𝓻](https://walkingdead.fandom.com/wiki/Philip_Blake_(TV_Series)) 𝔀𝓸𝓾𝓵𝓭 𝓱𝓪𝓿𝓮 𝓯𝓾𝓬𝓴𝓲𝓷𝓰 𝓭𝓲𝓮𝓭** .
 
 The rest is history (and overcomplicated project ideas).
 
